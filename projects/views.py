@@ -13,7 +13,7 @@ class ProjectListView(ListView):
 
 
 class ProjectCreateView(CreateView):
-    models = models.Project
+    model = models.Project
     form_class = forms.ProjectCreateForm
     template_name = 'project/create.html'
     success_url = reverse_lazy('Project_list')
@@ -30,13 +30,13 @@ class ProjectUpdateView(UpdateView):
 
 
 class ProjectDeleteView(DeleteView):
-    models = models.Task
+    model = models.Project
     template_name = 'project/delete.html'
     success_url = reverse_lazy('Project_list')
 
 
 class TaskCreateView(CreateView):
-    models = models.Task
+    model = models.Task
     fields = ['project', 'description']
     http_method_names = ['post']
 
@@ -45,7 +45,7 @@ class TaskCreateView(CreateView):
 
 
 class TaskUpdateView(UpdateView):
-    models = models.Task
+    model = models.Task
     fields = ['is_completed']
     http_method_names = ['post']
 
@@ -54,7 +54,7 @@ class TaskUpdateView(UpdateView):
 
 
 class TaskDeleteView(DeleteView):
-    models = models.Task
+    model = models.Task
 
     def get_success_url(self):
         return reverse('Project_update', args=[self.object.project.id])

@@ -37,12 +37,22 @@
 								{% trans 'Edit' %}
 							</a>
 							<a href="{% url 'Project_delete' project.id %}" class="btn btn-sm btn-outline-danger">
-								<i class="bi bi-trash"></i>
+								<i class="fa-solid fa-trash"></i>
 							</a>
 						</div>
 					</div>
 				</div>
 			</div>
+		{% empty %}
+			<div class="h-100 p-5 bg-white border rounded-3 text-primary">
+				<p>{% trans 'There are no projects to show' %}</p>
+			</div>
+			<p>
+				<i class="fa-regular fa-face-frown-slight"></i>
+			</p>
+			<a href="{% url 'Project_create' %}" class="btn btn-primary">
+				<i class="bi bi-plus-lg"></i> {% trans "New Project" %}
+			</a>
 		{% endfor %}
 	</div>
 
