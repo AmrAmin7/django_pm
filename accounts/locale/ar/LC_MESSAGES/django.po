@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-19 23:05+0200\n"
+"POT-Creation-Date: 2022-10-20 00:07+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,41 +19,41 @@ msgstr ""
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
-#: .\accounts\forms.py:15 .\accounts\forms.py:36
+#: .\accounts\forms.py:16 .\accounts\forms.py:36
 msgid "Username"
-msgstr "اللقب"
+msgstr "اسم المستخدم"
 
-#: .\accounts\forms.py:19 .\accounts\forms.py:46
+#: .\accounts\forms.py:20 .\accounts\forms.py:44
 msgid "Password"
-msgstr "كلمة السر"
+msgstr "كلمة المرور"
 
-#: .\accounts\forms.py:26
-msgid "Firstname"
-msgstr "الأسم"
+#: .\accounts\forms.py:28
+msgid "First Name"
+msgstr "الاسم"
 
-#: .\accounts\forms.py:31
-msgid "Lastname"
-msgstr "الأسم الأخير"
+#: .\accounts\forms.py:32
+msgid "Last Name"
+msgstr "الكنية"
 
-#: .\accounts\forms.py:41
+#: .\accounts\forms.py:40
 msgid "Email"
-msgstr "إيميل"
+msgstr "البريد الإلكتروني"
 
-#: .\accounts\forms.py:52
+#: .\accounts\forms.py:49
 msgid "Password Confirmation"
-msgstr "تأكيد كلمة السر"
+msgstr "تأكيد كلمة المرور"
 
 #: .\accounts\templates\profile.html:10
 msgid "Profile"
-msgstr "الملف الشخصى"
+msgstr "الملف الشخصي"
 
 #: .\accounts\templates\profile.html:20
 msgid "Save"
-msgstr ""
+msgstr "حفظ"
 
 #: .\accounts\templates\registration\login.html:10
 msgid "Login"
-msgstr "تسجيل دخول"
+msgstr "تسجيل الدخول"
 
 #: .\accounts\templates\registration\register.html:10
 msgid "Register"

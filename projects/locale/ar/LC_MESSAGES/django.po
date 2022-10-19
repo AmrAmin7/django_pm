@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-08 14:13+0300\n"
+"POT-Creation-Date: 2022-10-20 00:07+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
-#: .\projects\forms.py:14
+#: .\projects\forms.py:14 .\projects\models.py:15 .\projects\models.py:16
 msgid "Category"
 msgstr "التصنيف"
 
@@ -31,108 +31,127 @@ msgstr "العنوان"
 msgid "Description"
 msgstr "الوصف"
 
-#: .\projects\models.py:16
+#: .\projects\models.py:20
 msgid "Pending"
 msgstr "قيد التنفيذ"
 
-#: .\projects\models.py:17
+#: .\projects\models.py:21
 msgid "Completed"
 msgstr "مكتمل"
 
-#: .\projects\models.py:18
+#: .\projects\models.py:22
 msgid "Postponed"
 msgstr "معلق"
 
-#: .\projects\models.py:19
+#: .\projects\models.py:23
 msgid "Canceled"
 msgstr "ملغى"
 
-#: .\projects\templates\base.html:10
-#: .\projects\templates\partials\header.html:6
-msgid "Projects Management"
-msgstr "إدارة المشاريع"
+#: .\projects\models.py:46 .\projects\models.py:47
+#, fuzzy
+#| msgid "New Project"
+msgid "Project"
+msgstr "مشروع جديد"
 
-#: .\projects\templates\partials\footer.html:7
-msgid "(c) 2021 Hsoub. All rights reserved."
+#: .\projects\models.py:59 .\projects\models.py:60
+#, fuzzy
+#| msgid "New Task"
+msgid "Task"
+msgstr "مهمة جديدة"
+
+#: .\projects\templates\partials\footer.html:5
+#, fuzzy
+#| msgid "(c) 2021 Hsoub. All rights reserved."
+msgid "(c) 2022 Amr. All rights reserved."
 msgstr "جميع الخقوق محفوظة. حسوب 2021"
 
-#: .\projects\templates\partials\header.html:16
+#: .\projects\templates\partials\header.html:6 .\projects_management\urls.py:22
+#: .\projects_management\urls.py:23
+#, fuzzy
+#| msgid "Projects Management"
+msgid "Projects management"
+msgstr "إدارة المشاريع"
+
+#: .\projects\templates\partials\header.html:14
 msgid "Home"
 msgstr "الرئيسية"
 
-#: .\projects\templates\partials\header.html:26
+#: .\projects\templates\partials\header.html:24
 msgid "Profile"
 msgstr "الملف الشخصي"
 
-#: .\projects\templates\partials\header.html:28
+#: .\projects\templates\partials\header.html:26
 msgid "Logout"
 msgstr "تسجيل الخروج"
 
-#: .\projects\templates\partials\header.html:38
+#: .\projects\templates\partials\header.html:36
 msgid "Search"
 msgstr "بحث"
 
-#: .\projects\templates\partials\header.html:48
+#: .\projects\templates\partials\header.html:46
 msgid "Register"
 msgstr "حساب جديد"
 
-#: .\projects\templates\partials\header.html:51
+#: .\projects\templates\partials\header.html:49
 msgid "Login"
 msgstr "تسجيل الدخول"
 
-#: .\projects\templates\project\create.html:10
-#: .\projects\templates\project\list.html:12
-#: .\projects\templates\project\list.html:62
+#: .\projects\templates\project\create.html:9
+#: .\projects\templates\project\list.html:11
+#: .\projects\templates\project\list.html:56
 msgid "New Project"
 msgstr "مشروع جديد"
 
-#: .\projects\templates\project\create.html:17
-msgid "Create"
-msgstr "إنشاء"
-
-#: .\projects\templates\project\delete.html:5
+#: .\projects\templates\project\delete.html:4
 msgid "Alert"
 msgstr "تنبيه"
 
-#: .\projects\templates\project\delete.html:7
+#: .\projects\templates\project\delete.html:8
 msgid "Are you sure to delete"
 msgstr "هل أنت متأكد من أنك تريد حذف"
 
-#: .\projects\templates\project\delete.html:8
-#: .\projects\templates\project\update.html:46
+#: .\projects\templates\project\delete.html:10
+#: .\projects\templates\project\update.html:43
 msgid "Delete"
 msgstr "حذف"
 
-#: .\projects\templates\project\list.html:9
-msgid "My Projects"
+#: .\projects\templates\project\list.html:8
+#, fuzzy
+#| msgid "My Projects"
+msgid "My Project"
 msgstr "مشاريعي"
 
-#: .\projects\templates\project\list.html:43
+#: .\projects\templates\project\list.html:37
 msgid "Edit"
 msgstr "تعديل"
 
-#: .\projects\templates\project\list.html:57
-msgid "There is no projects to show"
+#: .\projects\templates\project\list.html:50
+#, fuzzy
+#| msgid "There is no projects to show"
+msgid "There are no projects to show"
 msgstr "لا توجد أية مشاريع لعرضها"
 
+#: .\projects\templates\project\list.html:68
 #: .\projects\templates\project\list.html:74
-#: .\projects\templates\project\list.html:79
 msgid "Previous"
 msgstr "السابق"
 
-#: .\projects\templates\project\list.html:85
-#: .\projects\templates\project\list.html:90
+#: .\projects\templates\project\list.html:81
+#: .\projects\templates\project\list.html:87
 msgid "Next"
 msgstr "التالي"
 
-#: .\projects\templates\project\task.html:31
+#: .\projects\templates\project\task.html:35
 msgid "New Task"
 msgstr "مهمة جديدة"
 
-#: .\projects\templates\project\task.html:32
+#: .\projects\templates\project\task.html:36
 msgid "Add"
 msgstr "إضافة"
 
-#: .\projects\templates\project\update.html:42
+#: .\projects\templates\project\update.html:39
 msgid "Save"
 msgstr "حفظ"
+
+#~ msgid "Create"
+#~ msgstr "إنشاء"
