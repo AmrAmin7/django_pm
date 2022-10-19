@@ -1,8 +1,8 @@
-from django.shortcuts import render
-from django.urls import reverse_lazy, reverse
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
-from . import models, forms
+from django.urls import reverse_lazy, reverse
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from . import models
+from . import forms
 
 
 class ProjectListView(LoginRequiredMixin, ListView):
@@ -12,9 +12,7 @@ class ProjectListView(LoginRequiredMixin, ListView):
 
     def get_queryset(self):
         query_set = super().get_queryset()
-        where = {
-            'user_id': self.request.user,
-        }
+        where = {'user_id': self.request.user}
         q = self.request.GET.get('q', None)
         if q:
             where['title__icontains'] = q
@@ -36,10 +34,9 @@ class ProjectUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = models.Project
     form_class = forms.ProjectUpdateForm
     template_name = 'project/update.html'
-    success_url = reverse_lazy('Project_list')
 
     def test_func(self):
-        return self.get_object().user_id == self.request.user_id
+        return self.get_object().user_id == self.request.user.id
 
     def get_success_url(self):
         return reverse('Project_update', args=[self.object.id])
@@ -51,7 +48,7 @@ class ProjectDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     success_url = reverse_lazy('Project_list')
 
     def test_func(self):
-        return self.get_object().user_id == self.request.user_id
+        return self.get_object().user_id == self.request.user.id
 
 
 class TaskCreateView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
@@ -73,7 +70,7 @@ class TaskUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     http_method_names = ['post']
 
     def test_func(self):
-        return self.get_object().project.user_id == self.request.user_id
+        return self.get_object().project.user_id == self.request.user.id
 
     def get_success_url(self):
         return reverse('Project_update', args=[self.object.project.id])
@@ -83,7 +80,7 @@ class TaskDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = models.Task
 
     def test_func(self):
-        return self.get_object().project.user_id == self.request.user_id
+        return self.get_object().project.user_id == self.request.user.id
 
     def get_success_url(self):
         return reverse('Project_update', args=[self.object.project.id])

@@ -6,7 +6,6 @@ from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
 
 
-# Create your views here.
 class RegisterView(CreateView):
     form_class = UserRegisterForm
     # success_url = reverse_lazy('login')
@@ -29,3 +28,4 @@ def edit_profile(request):
         return render(request, 'profile.html', {
             'form': form
         })
+
