@@ -1,0 +1,7 @@
+# If you want start deploy in heroku:
+# heroku config:set DISABLE_COLLECTSTATIC=1 --app django-p-m
+# then if u have other error:
+# heroku logs --tail
+# heroku logs --tail --app your_app_name
+# heroku restart
+
