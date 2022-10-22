@@ -16,7 +16,7 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
+from dj_database_url import parse as dburl # حزمة اعدادات قاعدة البيانات
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
@@ -83,7 +83,7 @@ WSGI_APPLICATION = 'projects_management.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = {
+"""DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'dfmf2nne7d546e',
@@ -92,8 +92,12 @@ DATABASES = {
         'HOST': 'ec2-63-32-248-14.eu-west-1.compute.amazonaws.com',
         'PORT': '5432',
     }
-}
+}"""
 
+default_dburl = 'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')
+DATABASES = {
+'default': config('DATABASE_URL', default=default_dburl, cast=dburl),
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
